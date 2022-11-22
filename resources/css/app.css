@@ -1,0 +1,13 @@
+a {
+    color: unset !important;
+    display: flex !important;
+    text-decoration: none !important;
+}
+p {
+    margin: 0 !important;
+}
+.text-hover:hover {
+    text-decoration: underline !important;
+}
+
+
