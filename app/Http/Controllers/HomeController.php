@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\ChMessage;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $message = json_decode(ChMessage::where('to_id',Auth::user()->id)->where('seen', 0)->get());
+
+        if ($message == null) {
+            $messageCount = 0;
+            return view('home',['messageCount' => $messageCount]);
+        }
+        else {
+            $messageCount = count(ChMessage::where('to_id',Auth::user()->id)->where('seen', 0)->get());
+        }
+
+        return view('home',['messageCount' => $messageCount]);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\MyMessageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::view('/','welcome')->name('welcome');
+Route::get('/', [MyMessageController::class, 'index'])->name('welcome');
 
 Auth::routes();
 
