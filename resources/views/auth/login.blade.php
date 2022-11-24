@@ -5,18 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-11 col-lg-8 shadow d-flex p-0">
             <div class="col-5 d-none d-sm-flex">
-                <img src="{{ asset('images/login.jpg') }}" style="width: 100%;height: 100%;object-fit: cover" alt="">
+                <img src="{{ asset('images/login-min.jpg') }}" style="filter: contrast(125%);width: 100%;height: 100%;object-fit: cover" alt="">
             </div>
             <form class="col-sm-7 d-flex p-5 px-4 px-sm-5 pt-4 pb-3 flex-wrap align-content-center" method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="col-12 mb-3 d-flex flex-nowrap align-items-center">
                     <p class="fs-4 text-nowrap">Sign in</p>
-                    <div class="p-1 ms-auto rounded-circle border d-flex justify-content-center align-content-center" style="width: 40px;height: 40px">
+                    <a href="https://www.facebook.com/frideestudio" target="_blank" class="btn btn-light p-1 ms-auto rounded-circle border d-flex justify-content-center align-content-center" style="width: 40px;height: 40px">
                         <i class="fa-brands fa-facebook-f d-flex justify-content-center align-items-center text-center align-self-center" style="line-height: inherit;font-size: inherit"></i>
-                    </div>
-                    <div class="p-1 ms-1 rounded-circle border d-flex justify-content-center align-content-center" style="width: 40px;height: 40px">
+                    </a>
+                    <a href="https://www.facebook.com/frideestudio" target="_blank" class="btn btn-light p-1 ms-1 rounded-circle border d-flex justify-content-center align-content-center" style="width: 40px;height: 40px">
                         <i class="fa-brands fa-linkedin-in d-flex justify-content-center align-items-center text-center align-self-center" style="line-height: inherit;font-size: inherit"></i>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-12 mb-1">
                     <label for="email" class="fw-bold">Email</label>

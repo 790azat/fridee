@@ -11,10 +11,10 @@
 </head>
 <body>
 <!-- Header _________________________________________________ -->
-@include('components.header')
+@include('components.welcome.header')
 <!-- Content _________________________________________________ -->
 @yield('content')
 <!-- Footer _________________________________________________ -->
-@include('components.footer')
+@include('components.welcome.footer')
 </body>
 </html>
