@@ -11,6 +11,7 @@
 </head>
 <body>
 <!-- Header _________________________________________________ -->
+@include('components.home.sidebar')
 @include('components.welcome.header')
 <!-- Content _________________________________________________ -->
 @yield('content')

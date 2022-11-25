@@ -1,4 +1,3 @@
-@include('components.home.sidebar')
 @extends('layout')
 
 @section('content')

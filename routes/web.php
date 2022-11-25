@@ -19,12 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/m',function () {
+    Artisan::call('config:cache');
+});
 
 Route::get('/', [MyMessageController::class, 'index'])->name('welcome');
 
 Route::get('/my-projects', [UserPanelController::class, 'my_projects'])->name('my-projects');
 Route::get('/all-projects', [UserPanelController::class, 'all_projects'])->name('all-projects');
 Route::get('/collaborators', [UserPanelController::class, 'all_collaborators'])->name('collaborators');
+Route::get('/profile/{id}', [UserPanelController::class, 'profile'])->name('profile');
 
 Auth::routes();
 

@@ -1,11 +1,11 @@
 {{-- ---------------------- Image modal box ---------------------- --}}
-<div id="imageModalBox" class="imageModal">
+<div id="imageModalBox" class="imageModal" style="font-family: Arial">
     <span class="imageModal-close">&times;</span>
     <img class="imageModal-content" id="imageModalBoxSrc">
   </div>
 
   {{-- ---------------------- Delete Modal ---------------------- --}}
-  <div class="app-modal" data-name="delete">
+  <div class="app-modal" data-name="delete" style="font-family: Arial">
       <div class="app-modal-container">
           <div class="app-modal-card" data-name="delete" data-modal='0'>
               <div class="app-modal-header">Are you sure you want to delete this?</div>
@@ -18,7 +18,7 @@
       </div>
   </div>
   {{-- ---------------------- Alert Modal ---------------------- --}}
-  <div class="app-modal" data-name="alert">
+  <div class="app-modal" data-name="alert" style="font-family: Arial">
       <div class="app-modal-container">
           <div class="app-modal-card" data-name="alert" data-modal='0'>
               <div class="app-modal-header"></div>
@@ -30,7 +30,7 @@
       </div>
   </div>
   {{-- ---------------------- Settings Modal ---------------------- --}}
-  <div class="app-modal" data-name="settings">
+  <div class="app-modal" data-name="settings" style="font-family: Arial">
       <div class="app-modal-container">
           <div class="app-modal-card" data-name="settings" data-modal='0'>
               <form id="update-settings" action="{{ route('avatar.update') }}" enctype="multipart/form-data" method="POST">

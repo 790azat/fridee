@@ -8,7 +8,7 @@
                     </div>
                     <div class="col-12 pt-2 text-center d-flex justify-content-between align-items-center">
                         <p>{{ $video->name }}</p>
-                        <p style="font-size: 10px">{{ explode(' ',$video->created_at)[0] }}</p>
+                        <p style="font-size: 10px">{{ $video->created_at->diffForHumans() }}</p>
                     </div>
                 </div>
             </a>
