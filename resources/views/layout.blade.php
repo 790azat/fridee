@@ -12,6 +12,9 @@
 <body>
 <!-- Header _________________________________________________ -->
 @include('components.home.sidebar')
+@auth
+    @include('components.home.edit-user-modal')
+@endauth
 @include('components.welcome.header')
 <!-- Content _________________________________________________ -->
 @yield('content')

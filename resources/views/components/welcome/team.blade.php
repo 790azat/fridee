@@ -18,9 +18,13 @@
                     <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{ asset('storage/users-avatar/' . $t->avatar) }}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                         <h5 class="mb-0">{{$t->name}}</h5><span class="small text-uppercase text-muted">{{$t->role}}</span>
                         <ul class="social mb-0 list-inline mt-3 d-flex flex-nowrap justify-content-center">
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
+                            @foreach(json_decode($t->social) as $key => $social)
+                                @if($social != null)
+                                    @if($key != 'phone')
+                                        <li class="list-inline-item"><a href="{{$social}}" target="_blank" class="social-link"><i class="fa-brands fa-{{$key}}"></i></a></li>
+                                    @endif
+                                @endif
+                            @endforeach
                         </ul>
                     </div>
                 </div>
