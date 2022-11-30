@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role')->nullable();
-            $table->string('social')->nullable();
+            $table->string('role')->default('Unknown')->nullable();
+            $table->string('social')->default('{"phone":null,"telegram":null,"instagram":null,"linkedin":null}')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

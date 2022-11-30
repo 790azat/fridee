@@ -47,19 +47,19 @@
                     </div>
                     <div class="col-12 d-flex flex-wrap justify-content-center gap-2">
                         <div class="col-12">
-                            <input type="tel" name="phone" class="col form-control" placeholder="Phone" value="{{json_decode(Auth::user()->social)->phone}}">
+                            <input type="tel" name="phone" class="col form-control" placeholder="Phone" value="@isset(json_decode(Auth::user()->social)->phone) {{json_decode(Auth::user()->social)->phone}} @endisset">
                         </div>
                         <div class="col-12">
-                            <input type="text" name="telegram" class="col form-control" placeholder="Telegram" value="{{json_decode(Auth::user()->social)->telegram}}">
+                            <input type="text" name="telegram" class="col form-control" placeholder="Telegram" value="@isset(json_decode(Auth::user()->social)->telegram) {{json_decode(Auth::user()->social)->telegram}} @endisset">
                         </div>
                         <div class="col-12">
-                            <input type="text" name="facebook" class="col form-control" placeholder="Facebook" value="{{json_decode(Auth::user()->social)->facebook}}">
+                            <input type="text" name="facebook" class="col form-control" placeholder="Facebook" value="@isset(json_decode(Auth::user()->social)->facebook) {{json_decode(Auth::user()->social)->facebook}} @endisset">
                         </div>
                         <div class="col-12">
-                            <input type="text" name="instagram" class="col form-control" placeholder="Instagram" value="{{json_decode(Auth::user()->social)->instagram}}">
+                            <input type="text" name="instagram" class="col form-control" placeholder="Instagram" value="@isset(json_decode(Auth::user()->social)->instagram) {{json_decode(Auth::user()->social)->instagram}} @endisset">
                         </div>
                         <div class="col-12">
-                            <input type="text" name="linkedin" class="col form-control" placeholder="Linkedin" value="{{json_decode(Auth::user()->social)->linkedin}}">
+                            <input type="text" name="linkedin" class="col form-control" placeholder="Linkedin" value="@isset(json_decode(Auth::user()->social)->linkedin) {{json_decode(Auth::user()->social)->linkedin}} @endisset">
                         </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center">
