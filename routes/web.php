@@ -20,9 +20,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/m',function () {
-    Artisan::call('migrate:fresh',['--force' => true]);
-});
 
 Route::get('/', [MyMessageController::class, 'index'])->name('welcome');
 

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-11 col-lg-8 shadow d-flex p-0">
             <div class="col-5 d-none d-sm-flex">
-                <img src="{{ asset('images/login.jpg') }}" style="width: 100%;height: 100%;object-fit: cover" alt="">
+                <img src="{{ asset('images/login-min.jpg') }}" style="width: 100%;height: 100%;object-fit: cover" alt="">
             </div>
             <form class="col-sm-7 d-flex p-5 px-4 px-sm-5 pt-4 pb-3 flex-wrap align-content-center" method="POST" action="{{ route('register') }}">
                 @csrf
