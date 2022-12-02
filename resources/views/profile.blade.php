@@ -44,38 +44,53 @@
                     </button>
                 </div>
             </div>
-            <div class="col-12">
-                <div class="col-12 row-cols-3 row-cols-sm-6 d-flex flex-wrap align-items-between">
-                    <div>
-                        <div class="col-11 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
-                            <a href="" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-solid fa-paper-plane me-1"></i> Telegram</p></a>
-                        </div>
+            <div style="width: min-content" class="d-flex flex-wrap align-items-between align-content-start">
+                @isset(json_decode($profile->social)->telegram)
+                    <div class="col-12 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
+                        <a href="{{json_decode($profile->social)->telegram}}" target="_blank" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-solid fa-paper-plane me-1"></i> Telegram</p></a>
                     </div>
-                    <div>
-                        <div class="col-11 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
-                            <a href="" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-brands fa-facebook me-1"></i> Facebook</p></a>
-                        </div>
+                @endisset
+                @isset(json_decode($profile->social)->facebook)
+                    <div class="col-12 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
+                        <a href="{{json_decode($profile->social)->facebook}}" target="_blank" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-brands fa-facebook me-1"></i> Facebook</p></a>
                     </div>
-                    <div>
-                        <div class="col-11 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
-                            <a href="" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-brands fa-instagram me-1"></i> Instagram</p></a>
-                        </div>
+                @endisset
+                @isset(json_decode($profile->social)->instagram)
+                    <div class="col-12 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
+                        <a href="{{json_decode($profile->social)->instagram}}" target="_blank" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-brands fa-instagram me-1"></i> Instagram</p></a>
                     </div>
-                    <div>
-                        <div class="col-11 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
-                            <a href="" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-brands fa-linkedin me-1"></i> Linked In</p></a>
-                        </div>
+                @endisset
+                @isset(json_decode($profile->social)->linkedin)
+                    <div class="col-12 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
+                        <a href="{{json_decode($profile->social)->linkedin}}" target="_blank" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-brands fa-linkedin me-1"></i> Linkedin</p></a>
                     </div>
-                    <div>
-                        <div class="col-11 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
-                            <a href="" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-solid fa-envelope me-1"></i> Email</p></a>
-                        </div>
+                @endisset
+                @isset($profile->email)
+                    <div class="col-12 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
+                        <a href="mailto:{{$profile->email}}" target="_blank" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-solid fa-envelope me-1"></i> Email</p></a>
                     </div>
-                    <div>
-                        <div class="col-11 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
-                            <a href="" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-solid fa-phone-flip me-1"></i> Phone</p></a>
-                        </div>
+                @endisset
+                @isset(json_decode($profile->social)->phone)
+                    <div class="col-12 mb-2 btn btn-light shadow-sm py-2 px-sm-3 px-0 rounded">
+                        <a href="tel:{{json_decode($profile->social)->phone}}" target="_blank" class="text-nowrap text-center d-flex justify-content-center"><p><i class="fa-solid fa-phone me-1"></i> Phone</p></a>
                     </div>
+                @endisset
+            </div>
+            <div class="col">
+                <div class="row row-cols-1 row-cols-sm-2 row-cls-md-3 p-0 m-0 d-flex">
+                    @foreach($videos as $video)
+                        <a href="{{ $video->link }}" target="_blank" class="col mb-3 pe-1 pb-0 d-flex flex-wrap">
+                            <div class="shadow-sm p-2 rounded">
+                                <div class="col-12">
+                                    <img src="{{ $video->image }}" alt="" style="width: 100%;height: 100%;object-fit: cover">
+                                </div>
+                                <div class="col-12 pt-2 text-center d-flex justify-content-between align-items-center">
+                                    <p>{{ $video->name }}</p>
+                                    <p style="font-size: 10px">{{ $video->created_at->diffForHumans() }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>

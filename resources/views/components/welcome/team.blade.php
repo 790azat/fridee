@@ -23,7 +23,7 @@
                         <ul class="social mb-0 list-inline mt-3 d-flex flex-nowrap justify-content-center">
                             @foreach(json_decode($t->social) as $key => $social)
                                 @if($social != null)
-                                    <li class="list-inline-item"><a href="@if($key == 'phone') tel:{{$social}} @endif" target="_blank" class="social-link"><i class=" @if($key == 'phone') fa-solid fa-phone @else fa-brands fa-{{$key}} @endif"></i></a></li>
+                                    <li class="list-inline-item"><a href="@if($key == 'phone') tel:{{$social}} @else {{$social}} @endif" target="_blank" class="social-link"><i class=" @if($key == 'phone') fa-solid fa-phone @else fa-brands fa-{{$key}} @endif"></i></a></li>
                                 @endif
                             @endforeach
                         </ul>

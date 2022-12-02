@@ -14,6 +14,7 @@
 @include('components.home.sidebar')
 @auth
     @include('components.home.edit-user-modal')
+    @include('components.home.project-add-modal')
 @endauth
 @include('components.welcome.header')
 <!-- Content _________________________________________________ -->
